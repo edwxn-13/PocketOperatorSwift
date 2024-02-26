@@ -1,0 +1,741 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		67087EC82B909D3800FE5DAB /* basicSamples in Resources */ = {isa = PBXBuildFile; fileRef = 67087EC72B909D3800FE5DAB /* basicSamples */; };
+		67087ECA2B909E5C00FE5DAB /* Sampler Instruments in Resources */ = {isa = PBXBuildFile; fileRef = 67087EC92B909E5B00FE5DAB /* Sampler Instruments */; };
+		67087ECC2B90A04400FE5DAB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67087ECB2B90A04300FE5DAB /* Location.swift */; };
+		67087ECF2B92042500FE5DAB /* ExtSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67087ECE2B92042500FE5DAB /* ExtSynth.swift */; };
+		67087ED22B92046600FE5DAB /* Tonic in Frameworks */ = {isa = PBXBuildFile; productRef = 67087ED12B92046600FE5DAB /* Tonic */; };
+		67372A382B9273DF00DFFFB8 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67372A372B9273DF00DFFFB8 /* Note.swift */; };
+		67372A3A2B9273E700DFFFB8 /* KeyScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67372A392B9273E700DFFFB8 /* KeyScale.swift */; };
+		67529DF22BA1F762009D3DA9 /* PocketSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67529DF12BA1F762009D3DA9 /* PocketSynth.swift */; };
+		67636CC82BA8923200435C12 /* FractalMeldoy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67636CC72BA8923200435C12 /* FractalMeldoy.swift */; };
+		67636CCA2BA8DC4400435C12 /* LFO3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67636CC92BA8DC4400435C12 /* LFO3.swift */; };
+		67636CCC2BA8F35C00435C12 /* DrumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67636CCB2BA8F35C00435C12 /* DrumManager.swift */; };
+		67636CCE2BA8F60000435C12 /* drumSamples in Resources */ = {isa = PBXBuildFile; fileRef = 67636CCD2BA8F60000435C12 /* drumSamples */; };
+		67947CE02B8CFBC000D98ACE /* PocketOperatorSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67947CDF2B8CFBC000D98ACE /* PocketOperatorSwiftApp.swift */; };
+		67947CE22B8CFBC000D98ACE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67947CE12B8CFBC000D98ACE /* ContentView.swift */; };
+		67947CE42B8CFBC600D98ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67947CE32B8CFBC600D98ACE /* Assets.xcassets */; };
+		67947CE72B8CFBC600D98ACE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67947CE62B8CFBC600D98ACE /* Preview Assets.xcassets */; };
+		67947CF12B8CFBC700D98ACE /* PocketOperatorSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67947CF02B8CFBC700D98ACE /* PocketOperatorSwiftTests.swift */; };
+		67947CFB2B8CFBC700D98ACE /* PocketOperatorSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67947CFA2B8CFBC700D98ACE /* PocketOperatorSwiftUITests.swift */; };
+		67947CFD2B8CFBC700D98ACE /* PocketOperatorSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67947CFC2B8CFBC700D98ACE /* PocketOperatorSwiftUITestsLaunchTests.swift */; };
+		67947D332B8D68FF00D98ACE /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 67947D322B8D68FF00D98ACE /* AudioKit */; };
+		67947D362B8D691200D98ACE /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 67947D352B8D691200D98ACE /* AudioKitUI */; };
+		67947D392B8E1BC100D98ACE /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 67947D382B8E1BC100D98ACE /* SoundpipeAudioKit */; };
+		67947D3B2B8E43E900D98ACE /* Sequencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67947D3A2B8E43E900D98ACE /* Sequencer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		67947CED2B8CFBC700D98ACE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67947CD42B8CFBC000D98ACE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67947CDB2B8CFBC000D98ACE;
+			remoteInfo = PocketOperatorSwift;
+		};
+		67947CF72B8CFBC700D98ACE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67947CD42B8CFBC000D98ACE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67947CDB2B8CFBC000D98ACE;
+			remoteInfo = PocketOperatorSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		67087EA12B8FE8A400FE5DAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		67087EC72B909D3800FE5DAB /* basicSamples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = basicSamples; sourceTree = "<group>"; };
+		67087EC92B909E5B00FE5DAB /* Sampler Instruments */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Sampler Instruments"; sourceTree = "<group>"; };
+		67087ECB2B90A04300FE5DAB /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		67087ECE2B92042500FE5DAB /* ExtSynth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtSynth.swift; sourceTree = "<group>"; };
+		67372A372B9273DF00DFFFB8 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		67372A392B9273E700DFFFB8 /* KeyScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyScale.swift; sourceTree = "<group>"; };
+		67529DF12BA1F762009D3DA9 /* PocketSynth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketSynth.swift; sourceTree = "<group>"; };
+		67636CC72BA8923200435C12 /* FractalMeldoy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractalMeldoy.swift; sourceTree = "<group>"; };
+		67636CC92BA8DC4400435C12 /* LFO3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFO3.swift; sourceTree = "<group>"; };
+		67636CCB2BA8F35C00435C12 /* DrumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumManager.swift; sourceTree = "<group>"; };
+		67636CCD2BA8F60000435C12 /* drumSamples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = drumSamples; sourceTree = "<group>"; };
+		67947CDC2B8CFBC000D98ACE /* PocketOperatorSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketOperatorSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		67947CDF2B8CFBC000D98ACE /* PocketOperatorSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketOperatorSwiftApp.swift; sourceTree = "<group>"; };
+		67947CE12B8CFBC000D98ACE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = PocketOperatorSwift/ContentView.swift; sourceTree = SOURCE_ROOT; };
+		67947CE32B8CFBC600D98ACE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		67947CE62B8CFBC600D98ACE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		67947CEC2B8CFBC700D98ACE /* PocketOperatorSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketOperatorSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67947CF02B8CFBC700D98ACE /* PocketOperatorSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketOperatorSwiftTests.swift; sourceTree = "<group>"; };
+		67947CF62B8CFBC700D98ACE /* PocketOperatorSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketOperatorSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67947CFA2B8CFBC700D98ACE /* PocketOperatorSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketOperatorSwiftUITests.swift; sourceTree = "<group>"; };
+		67947CFC2B8CFBC700D98ACE /* PocketOperatorSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketOperatorSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		67947D3A2B8E43E900D98ACE /* Sequencer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequencer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		67947CD92B8CFBC000D98ACE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67947D362B8D691200D98ACE /* AudioKitUI in Frameworks */,
+				67947D332B8D68FF00D98ACE /* AudioKit in Frameworks */,
+				67087ED22B92046600FE5DAB /* Tonic in Frameworks */,
+				67947D392B8E1BC100D98ACE /* SoundpipeAudioKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67947CE92B8CFBC700D98ACE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67947CF32B8CFBC700D98ACE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		67087ECD2B91F28100FE5DAB /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		67529DF02BA1F754009D3DA9 /* Synth */ = {
+			isa = PBXGroup;
+			children = (
+				67529DF12BA1F762009D3DA9 /* PocketSynth.swift */,
+			);
+			path = Synth;
+			sourceTree = "<group>";
+		};
+		67947CD32B8CFBC000D98ACE = {
+			isa = PBXGroup;
+			children = (
+				67947CDE2B8CFBC000D98ACE /* PocketOperatorSwift */,
+				67947CEF2B8CFBC700D98ACE /* PocketOperatorSwiftTests */,
+				67947CF92B8CFBC700D98ACE /* PocketOperatorSwiftUITests */,
+				67947CDD2B8CFBC000D98ACE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		67947CDD2B8CFBC000D98ACE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67947CDC2B8CFBC000D98ACE /* PocketOperatorSwift.app */,
+				67947CEC2B8CFBC700D98ACE /* PocketOperatorSwiftTests.xctest */,
+				67947CF62B8CFBC700D98ACE /* PocketOperatorSwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		67947CDE2B8CFBC000D98ACE /* PocketOperatorSwift */ = {
+			isa = PBXGroup;
+			children = (
+				67636CCD2BA8F60000435C12 /* drumSamples */,
+				67087EC72B909D3800FE5DAB /* basicSamples */,
+				67087EC92B909E5B00FE5DAB /* Sampler Instruments */,
+				67087ECD2B91F28100FE5DAB /* Sounds */,
+				67087EA12B8FE8A400FE5DAB /* Info.plist */,
+				67947CDF2B8CFBC000D98ACE /* PocketOperatorSwiftApp.swift */,
+				67947CE12B8CFBC000D98ACE /* ContentView.swift */,
+				67087ECB2B90A04300FE5DAB /* Location.swift */,
+				67947D3A2B8E43E900D98ACE /* Sequencer.swift */,
+				67636CC92BA8DC4400435C12 /* LFO3.swift */,
+				67372A372B9273DF00DFFFB8 /* Note.swift */,
+				67372A392B9273E700DFFFB8 /* KeyScale.swift */,
+				67636CCB2BA8F35C00435C12 /* DrumManager.swift */,
+				67087ECE2B92042500FE5DAB /* ExtSynth.swift */,
+				67636CC72BA8923200435C12 /* FractalMeldoy.swift */,
+				67529DF02BA1F754009D3DA9 /* Synth */,
+				67947CE32B8CFBC600D98ACE /* Assets.xcassets */,
+				67947CE52B8CFBC600D98ACE /* Preview Content */,
+			);
+			path = PocketOperatorSwift;
+			sourceTree = "<group>";
+		};
+		67947CE52B8CFBC600D98ACE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				67947CE62B8CFBC600D98ACE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		67947CEF2B8CFBC700D98ACE /* PocketOperatorSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				67947CF02B8CFBC700D98ACE /* PocketOperatorSwiftTests.swift */,
+			);
+			path = PocketOperatorSwiftTests;
+			sourceTree = "<group>";
+		};
+		67947CF92B8CFBC700D98ACE /* PocketOperatorSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				67947CFA2B8CFBC700D98ACE /* PocketOperatorSwiftUITests.swift */,
+				67947CFC2B8CFBC700D98ACE /* PocketOperatorSwiftUITestsLaunchTests.swift */,
+			);
+			path = PocketOperatorSwiftUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		67947CDB2B8CFBC000D98ACE /* PocketOperatorSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67947D002B8CFBC700D98ACE /* Build configuration list for PBXNativeTarget "PocketOperatorSwift" */;
+			buildPhases = (
+				67947CD82B8CFBC000D98ACE /* Sources */,
+				67947CD92B8CFBC000D98ACE /* Frameworks */,
+				67947CDA2B8CFBC000D98ACE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PocketOperatorSwift;
+			packageProductDependencies = (
+				67947D322B8D68FF00D98ACE /* AudioKit */,
+				67947D352B8D691200D98ACE /* AudioKitUI */,
+				67947D382B8E1BC100D98ACE /* SoundpipeAudioKit */,
+				67087ED12B92046600FE5DAB /* Tonic */,
+			);
+			productName = PocketOperatorSwift;
+			productReference = 67947CDC2B8CFBC000D98ACE /* PocketOperatorSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		67947CEB2B8CFBC700D98ACE /* PocketOperatorSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67947D032B8CFBC700D98ACE /* Build configuration list for PBXNativeTarget "PocketOperatorSwiftTests" */;
+			buildPhases = (
+				67947CE82B8CFBC700D98ACE /* Sources */,
+				67947CE92B8CFBC700D98ACE /* Frameworks */,
+				67947CEA2B8CFBC700D98ACE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67947CEE2B8CFBC700D98ACE /* PBXTargetDependency */,
+			);
+			name = PocketOperatorSwiftTests;
+			productName = PocketOperatorSwiftTests;
+			productReference = 67947CEC2B8CFBC700D98ACE /* PocketOperatorSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		67947CF52B8CFBC700D98ACE /* PocketOperatorSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67947D062B8CFBC700D98ACE /* Build configuration list for PBXNativeTarget "PocketOperatorSwiftUITests" */;
+			buildPhases = (
+				67947CF22B8CFBC700D98ACE /* Sources */,
+				67947CF32B8CFBC700D98ACE /* Frameworks */,
+				67947CF42B8CFBC700D98ACE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67947CF82B8CFBC700D98ACE /* PBXTargetDependency */,
+			);
+			name = PocketOperatorSwiftUITests;
+			productName = PocketOperatorSwiftUITests;
+			productReference = 67947CF62B8CFBC700D98ACE /* PocketOperatorSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		67947CD42B8CFBC000D98ACE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					67947CDB2B8CFBC000D98ACE = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					67947CEB2B8CFBC700D98ACE = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 67947CDB2B8CFBC000D98ACE;
+					};
+					67947CF52B8CFBC700D98ACE = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 67947CDB2B8CFBC000D98ACE;
+					};
+				};
+			};
+			buildConfigurationList = 67947CD72B8CFBC000D98ACE /* Build configuration list for PBXProject "PocketOperatorSwift" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 67947CD32B8CFBC000D98ACE;
+			packageReferences = (
+				67947D312B8D68FF00D98ACE /* XCRemoteSwiftPackageReference "AudioKit" */,
+				67947D342B8D691200D98ACE /* XCRemoteSwiftPackageReference "AudioKitUI" */,
+				67947D372B8E1BC100D98ACE /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
+				67087ED02B92046600FE5DAB /* XCRemoteSwiftPackageReference "Tonic" */,
+			);
+			productRefGroup = 67947CDD2B8CFBC000D98ACE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				67947CDB2B8CFBC000D98ACE /* PocketOperatorSwift */,
+				67947CEB2B8CFBC700D98ACE /* PocketOperatorSwiftTests */,
+				67947CF52B8CFBC700D98ACE /* PocketOperatorSwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		67947CDA2B8CFBC000D98ACE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67087EC82B909D3800FE5DAB /* basicSamples in Resources */,
+				67947CE72B8CFBC600D98ACE /* Preview Assets.xcassets in Resources */,
+				67947CE42B8CFBC600D98ACE /* Assets.xcassets in Resources */,
+				67636CCE2BA8F60000435C12 /* drumSamples in Resources */,
+				67087ECA2B909E5C00FE5DAB /* Sampler Instruments in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67947CEA2B8CFBC700D98ACE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67947CF42B8CFBC700D98ACE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		67947CD82B8CFBC000D98ACE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67529DF22BA1F762009D3DA9 /* PocketSynth.swift in Sources */,
+				67947CE22B8CFBC000D98ACE /* ContentView.swift in Sources */,
+				67087ECF2B92042500FE5DAB /* ExtSynth.swift in Sources */,
+				67636CCA2BA8DC4400435C12 /* LFO3.swift in Sources */,
+				67947CE02B8CFBC000D98ACE /* PocketOperatorSwiftApp.swift in Sources */,
+				67636CCC2BA8F35C00435C12 /* DrumManager.swift in Sources */,
+				67087ECC2B90A04400FE5DAB /* Location.swift in Sources */,
+				67372A3A2B9273E700DFFFB8 /* KeyScale.swift in Sources */,
+				67947D3B2B8E43E900D98ACE /* Sequencer.swift in Sources */,
+				67372A382B9273DF00DFFFB8 /* Note.swift in Sources */,
+				67636CC82BA8923200435C12 /* FractalMeldoy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67947CE82B8CFBC700D98ACE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67947CF12B8CFBC700D98ACE /* PocketOperatorSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67947CF22B8CFBC700D98ACE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67947CFD2B8CFBC700D98ACE /* PocketOperatorSwiftUITestsLaunchTests.swift in Sources */,
+				67947CFB2B8CFBC700D98ACE /* PocketOperatorSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67947CEE2B8CFBC700D98ACE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67947CDB2B8CFBC000D98ACE /* PocketOperatorSwift */;
+			targetProxy = 67947CED2B8CFBC700D98ACE /* PBXContainerItemProxy */;
+		};
+		67947CF82B8CFBC700D98ACE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67947CDB2B8CFBC000D98ACE /* PocketOperatorSwift */;
+			targetProxy = 67947CF72B8CFBC700D98ACE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		67947CFE2B8CFBC700D98ACE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		67947CFF2B8CFBC700D98ACE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		67947D012B8CFBC700D98ACE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PocketOperatorSwift/Preview Content\"";
+				DEVELOPMENT_TEAM = Y855W4BGWR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PocketOperatorSwift/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please Allow Location Use so speed can be used to generate music";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = exxtra.PocketOperatorSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		67947D022B8CFBC700D98ACE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PocketOperatorSwift/Preview Content\"";
+				DEVELOPMENT_TEAM = Y855W4BGWR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PocketOperatorSwift/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please Allow Location Use so speed can be used to generate music";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = exxtra.PocketOperatorSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		67947D042B8CFBC700D98ACE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y855W4BGWR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = exxtra.PocketOperatorSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketOperatorSwift.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PocketOperatorSwift";
+			};
+			name = Debug;
+		};
+		67947D052B8CFBC700D98ACE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y855W4BGWR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = exxtra.PocketOperatorSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketOperatorSwift.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PocketOperatorSwift";
+			};
+			name = Release;
+		};
+		67947D072B8CFBC700D98ACE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y855W4BGWR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = exxtra.PocketOperatorSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PocketOperatorSwift;
+			};
+			name = Debug;
+		};
+		67947D082B8CFBC700D98ACE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y855W4BGWR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = exxtra.PocketOperatorSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PocketOperatorSwift;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		67947CD72B8CFBC000D98ACE /* Build configuration list for PBXProject "PocketOperatorSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67947CFE2B8CFBC700D98ACE /* Debug */,
+				67947CFF2B8CFBC700D98ACE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67947D002B8CFBC700D98ACE /* Build configuration list for PBXNativeTarget "PocketOperatorSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67947D012B8CFBC700D98ACE /* Debug */,
+				67947D022B8CFBC700D98ACE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67947D032B8CFBC700D98ACE /* Build configuration list for PBXNativeTarget "PocketOperatorSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67947D042B8CFBC700D98ACE /* Debug */,
+				67947D052B8CFBC700D98ACE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67947D062B8CFBC700D98ACE /* Build configuration list for PBXNativeTarget "PocketOperatorSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67947D072B8CFBC700D98ACE /* Debug */,
+				67947D082B8CFBC700D98ACE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		67087ED02B92046600FE5DAB /* XCRemoteSwiftPackageReference "Tonic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/Tonic.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.1;
+			};
+		};
+		67947D312B8D68FF00D98ACE /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.3;
+			};
+		};
+		67947D342B8D691200D98ACE /* XCRemoteSwiftPackageReference "AudioKitUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKitUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.7;
+			};
+		};
+		67947D372B8E1BC100D98ACE /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/SoundpipeAudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		67087ED12B92046600FE5DAB /* Tonic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67087ED02B92046600FE5DAB /* XCRemoteSwiftPackageReference "Tonic" */;
+			productName = Tonic;
+		};
+		67947D322B8D68FF00D98ACE /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67947D312B8D68FF00D98ACE /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+		67947D352B8D691200D98ACE /* AudioKitUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67947D342B8D691200D98ACE /* XCRemoteSwiftPackageReference "AudioKitUI" */;
+			productName = AudioKitUI;
+		};
+		67947D382B8E1BC100D98ACE /* SoundpipeAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67947D372B8E1BC100D98ACE /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */;
+			productName = SoundpipeAudioKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 67947CD42B8CFBC000D98ACE /* Project object */;
+}
