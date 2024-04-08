@@ -6,36 +6,28 @@
 //
 
 import Foundation
+import SwiftUI
 
+public enum Waveform2
+{
+  case Sine
+  case Saw
+  case Square
+  case Random
+}
 
 public class LFO3 : ObservableObject
 {
-  
   @Published var angle : Float = 0;
   @Published var intensity : Float = 0;
-  public enum Waveform
-  {
-    case Sine
-    case Saw
-    case Square
-    case Random
-  }
-  
-  public enum Rate
-  {
-    case Eighth
-    case Quarter
-    case Half
-    case Whole
-  }
-  
-  var wave : Waveform
-  var rate : Rate
+ 
+  @Published var wave : Waveform2
+  @Published var rate : division
   
   init()
   {
-    wave = Waveform.Sine
-    rate = Rate.Half
+    wave = Waveform2.Sine
+    rate = division.Half
   }
   
   func deg2rads(_ angle : Float) -> Float
@@ -45,50 +37,79 @@ public class LFO3 : ObservableObject
   
   public func get_value() -> Float
   {
-    if(wave == Waveform.Sine)
+    if(wave == Waveform2.Sine)
     {
       return sin(deg2rads(angle))
     }
-
-    if(wave == Waveform.Saw)
+    if(wave == Waveform2.Saw)
     {
       return sin(angle)
     }
-
-    if(wave == Waveform.Square)
+    if(wave == Waveform2.Square)
     {
       return sin(deg2rads(angle)) + (0.33333 * sin (deg2rads(3 * angle))) + (0.2 * sin(deg2rads( 5 * angle))) + (0.124 * sin(deg2rads( 7 * angle)))
     }
-
-    if(wave == Waveform.Random)
+    if(wave == Waveform2.Random)
     {
       return sin(angle)
     }
-
-    return sin(angle)
-
+    return sin(angle) * intensity
   }
   
   public func update()
   {
-    if(rate == Rate.Eighth)
+    if(rate == division.Sixteenth)
     {
-      angle = angle + 2.8125;
+      angle = angle + (45/2);
     }
-    
-    if(rate == Rate.Quarter)
+    if(rate == division.Eighth)
     {
-      angle = angle + 5.625;
+      angle = angle + (22.5/2);
     }
-    
-    if(rate == Rate.Half)
+    if(rate == division.Quarter)
     {
-      angle = angle + 11.25;
+      angle = angle + (11.25/2);
     }
-    
-    if(rate == Rate.Half)
+    if(rate == division.Half)
     {
-      angle = angle + 22.5;
+      angle = angle + (5.625/2);
+    }
+    print(get_value() , "\n")
+  }
+}
+
+
+struct LFOManger : View {
+  @EnvironmentObject var parent_class: LFO3
+  
+  public var label : String
+  
+  var body: some View
+  {
+    VStack
+    {
+      Text(label)
+      HStack{
+        Text("Intensity")
+        Slider(value: $parent_class.intensity , in: 0...1, step: 0.01)
+      }
+    }
+    HStack {
+      Picker("Rate", selection: $parent_class.rate) {
+        Text("Sixteenth").tag(division.Sixteenth)
+        Text("Eight").tag(division.Eighth)
+        Text("Quarter").tag(division.Dotted)
+        Text("Half").tag(division.Half)
+      }.pickerStyle(SegmentedPickerStyle())
+    }
+    HStack {
+      Picker("Wave Type", selection: $parent_class.wave) {
+        Text("Sin").tag(Waveform2.Sine)
+        Text("Square").tag(Waveform2.Square)
+        Text("Saw").tag(Waveform2.Saw)
+        Text("Random").tag(Waveform2.Random)
+      }.pickerStyle(SegmentedPickerStyle())
     }
   }
+  
 }

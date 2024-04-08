@@ -14,39 +14,44 @@ import SwiftUI
 
 
 struct Sample {
-    var name: String
-    var fileName: String
-    var midiNote: Int
-    var audioFile: AVAudioFile?
-
-    init(_ drumPath: String, file: String, note: Int)
+  var name: String
+  var fileName: String
+  var midiNote: Int
+  var audioFile: AVAudioFile?
+  
+  init(_ drumPath: String, file: String, note: Int)
   {
-        name = drumPath
-        fileName = file
-        midiNote = note
+    name = drumPath
+    fileName = file
+    midiNote = note
     
-      do
+    do
+    {
+      var path = file
+      if let fileURL = Bundle.main.url(forResource: path, withExtension: "wav")
       {
-        var path = file
-        if let fileURL = Bundle.main.url(forResource: path, withExtension: "wav")
-        {
-          try audioFile = AVAudioFile(forReading: fileURL)
-        }
-        else {
-          Log("Could not find file")
-        }
-      } catch {
-        Log("Could not load instrument")
+        try audioFile = AVAudioFile(forReading: fileURL)
       }
+      else {
+        Log("Could not find file")
+      }
+    } catch {
+      Log("Could not load instrument")
     }
+  }
 }
 
-class DrumManager {
-    // Mark Published so View updates label on changes
+class DrumManager : ObservableObject {
+  
+  let hats = AppleSampler()
+  let clap = AppleSampler()
+  let kick = AppleSampler()
+  
+  @Published var kick_sequence : [Bool] = Array(repeating: false, count: 16)
+  @Published var hat_sequence : [Bool] = Array(repeating: false, count: 16)
+  @Published var snare_sequence : [Bool] = Array(repeating: false, count: 16)
 
-    let hats = AppleSampler()
-    let clap = AppleSampler()
-    let kick = AppleSampler()
+  var type : Int = 0
   
   func trap_pattern(_ step_number : Int , _ interval : Int)
   {
@@ -56,7 +61,7 @@ class DrumManager {
     {
       clap.play(noteNumber: MIDINoteNumber(70))
     }
-   
+    
     if(interval == 12)
     {
       clap.play(noteNumber: MIDINoteNumber(70))
@@ -85,7 +90,7 @@ class DrumManager {
     {
       clap.play(noteNumber: MIDINoteNumber(70))
     }
-   
+    
     if(interval == 12)
     {
       clap.play(noteNumber: MIDINoteNumber(70))
@@ -111,69 +116,88 @@ class DrumManager {
       kick.play(noteNumber: MIDINoteNumber(70))
     }
     
-    if(interval == 16)
+    
+  }
+  
+  
+  func custom_pattern(_ step_number : Int , _ interval : Int)
+  {
+    if(hat_sequence[interval] == true)
+    {
+      hats.play(noteNumber: MIDINoteNumber(70))
+    }
+    
+    if(snare_sequence[interval] == true)
+    {
+      clap.play(noteNumber: MIDINoteNumber(70))
+    }
+    
+    if(kick_sequence[interval] == true)
     {
       kick.play(noteNumber: MIDINoteNumber(70))
     }
-    
 
   }
   
   func drum_pattern(_ step_number : Int , _ interval : Int)
   {
-    trap_pattern(step_number, interval)
+    if(type == 0){trap_pattern(step_number, interval)}
+    if(type == 1){simple_pattern(step_number, interval)}
+    if(type == 2){simple_pattern(step_number, interval)}
+    if(type == 3){custom_pattern(step_number, interval)}
+
+    
   }
-
-    init() {
-      
-      do
+  init(drumOption : Int) {
+    
+    type = drumOption
+    
+    do
+    {
+      var path = "drumSamples/hat"
+      if let fileURL = Bundle.main.url(forResource: path, withExtension: "wav")
       {
-        var path = "drumSamples/hat"
-        if let fileURL = Bundle.main.url(forResource: path, withExtension: "wav")
-        {
-          try hats.loadWav("drumSamples/hat")
-        }
-        else {
-          Log("Could not find file")
-        }
-      } catch {
-        Log("Could not load instrument")
+        try hats.loadWav("drumSamples/hat")
       }
-      
-      do
-      {
-        var path = "drumSamples/clap"
-        if let fileURL = Bundle.main.url(forResource: path, withExtension: "wav")
-        {
-          try clap.loadWav("drumSamples/clap")
-        }
-        else {
-          Log("Could not find file")
-        }
-      } catch {
-        Log("Could not load instrument")
+      else {
+        Log("Could not find file")
       }
-      
-      do
-      {
-        var path = "drumSamples/kick"
-        if let fileURL = Bundle.main.url(forResource: path, withExtension: "wav")
-        {
-          try kick.loadWav("drumSamples/kick")
-        }
-        else {
-          Log("Could not find file")
-        }
-      } catch {
-        Log("Could not load instrument")
-      }
-      
-      kick.amplitude = 8;
-      hats.amplitude = 4;
-      clap.amplitude = 6;
-
-
+    } catch {
+      Log("Could not load instrument")
     }
+    
+    do
+    {
+      var path = "drumSamples/clap"
+      if let fileURL = Bundle.main.url(forResource: path, withExtension: "wav")
+      {
+        try clap.loadWav("drumSamples/clap")
+      }
+      else {
+        Log("Could not find file")
+      }
+    } catch {
+      Log("Could not load instrument")
+    }
+    
+    do
+    {
+      var path = "drumSamples/kick"
+      if let fileURL = Bundle.main.url(forResource: path, withExtension: "wav")
+      {
+        try kick.loadWav("drumSamples/kick")
+      }
+      else {
+        Log("Could not find file")
+      }
+    } catch {
+      Log("Could not load instrument")
+    }
+    
+    kick.amplitude = 8;
+    hats.amplitude = 4;
+    clap.amplitude = 6;
+  }
   
   
   

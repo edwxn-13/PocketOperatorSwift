@@ -13,7 +13,10 @@ enum division : Int
   case Sixteenth = 1
   case Eighth = 2
   case Dotted = 3
-  case Half = 4
+  case Quarter = 4
+  case Half = 8
+  case HalfDotted = 6
+
 }
 
 
@@ -28,7 +31,6 @@ class MutationMelody
   public var temp_melody : [Int]
   
   public var generations : [[Int]] = []
-
   
   public var rhythm : division = division.Sixteenth
   
@@ -128,7 +130,6 @@ class MutationMelody
   
   public func next_melody_random() -> Int
   {
-
     switch Int.random(in: 0..<3)
     {
     case 0:
@@ -137,13 +138,11 @@ class MutationMelody
     default:
       return chosen_melody
     }
-
   }
   
   public func next_gen()
   {
     chosen_melody = chosen_melody + 1
-    
   }
   
   func switch_rhythm()

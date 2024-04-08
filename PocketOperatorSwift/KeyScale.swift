@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class KeyScale
 {
   public static func get_ninth(note: Note) -> Note
@@ -115,7 +116,115 @@ class KeyScale
     return key_scale.count
   }
   
-  public init(_ offset:Int)
+  public init(_ offset:Int, _ type:Int)
+  {
+    
+    self.offset = offset
+    var temp_scale : [Note]
+    
+    temp_scale = [
+      Note(position: 1, semitone: 36 + offset),
+      Note(position: 2, semitone: 38 + offset),
+      Note(position: 3, semitone: 40 + offset),
+      Note(position: 4, semitone: 41 + offset),
+      Note(position: 5, semitone: 43 + offset),
+      Note(position: 6, semitone: 45 + offset),
+      Note(position: 7, semitone: 47 + offset)]
+    
+    if(type == 1)
+    {
+      temp_scale = [
+        Note(position: 1, semitone: 36 + offset),
+        Note(position: 2, semitone: 38 + offset),
+        Note(position: 3, semitone: 40 + offset),
+        Note(position: 4, semitone: 41 + offset),
+        Note(position: 5, semitone: 43 + offset),
+        Note(position: 6, semitone: 45 + offset),
+        Note(position: 7, semitone: 47 + offset)]
+    }
+    
+    if(type == 2)
+    {
+      temp_scale = [
+        Note(position: 2, semitone: 36 + offset),
+        Note(position: 3, semitone: 38 + offset),
+        Note(position: 4, semitone: 39 + offset),
+        Note(position: 5, semitone: 41 + offset),
+        Note(position: 6, semitone: 43 + offset),
+        Note(position: 7, semitone: 45 + offset),
+        Note(position: 1, semitone: 46 + offset)]
+    }
+    
+    if(type == 3)
+    {
+      temp_scale = [
+        Note(position: 3, semitone: 36 + offset),
+        Note(position: 4, semitone: 37 + offset),
+        Note(position: 5, semitone: 39 + offset),
+        Note(position: 6, semitone: 41 + offset),
+        Note(position: 7, semitone: 43 + offset),
+        Note(position: 1, semitone: 44 + offset),
+        Note(position: 2, semitone: 46 + offset)]
+    }
+    
+    if(type == 4)
+    {
+      temp_scale = [
+        Note(position: 4, semitone: 36 + offset),
+        Note(position: 5, semitone: 38 + offset),
+        Note(position: 6, semitone: 40 + offset),
+        Note(position: 7, semitone: 42 + offset),
+        Note(position: 1, semitone: 43 + offset),
+        Note(position: 2, semitone: 45 + offset),
+        Note(position: 3, semitone: 47 + offset)]
+    }
+    
+    if(type == 5)
+    {
+      temp_scale = [
+        Note(position: 5, semitone: 36 + offset),
+        Note(position: 6, semitone: 38 + offset),
+        Note(position: 7, semitone: 40 + offset),
+        Note(position: 1, semitone: 41 + offset),
+        Note(position: 2, semitone: 43 + offset),
+        Note(position: 3, semitone: 45 + offset),
+        Note(position: 4, semitone: 46 + offset)]
+    }
+    if(type == 6)
+    {
+      temp_scale = [
+        Note(position: 6, semitone: 36 + offset),
+        Note(position: 7, semitone: 38 + offset),
+        Note(position: 1, semitone: 39 + offset),
+        Note(position: 2, semitone: 41 + offset),
+        Note(position: 3, semitone: 43 + offset),
+        Note(position: 4, semitone: 44 + offset),
+        Note(position: 5, semitone: 46 + offset)]
+    }
+    if(type == 7)
+    {
+      temp_scale = [
+        Note(position: 7, semitone: 36 + offset),
+        Note(position: 1, semitone: 37 + offset),
+        Note(position: 2, semitone: 39 + offset),
+        Note(position: 3, semitone: 41 + offset),
+        Note(position: 4, semitone: 42 + offset),
+        Note(position: 5, semitone: 44 + offset),
+        Note(position: 6, semitone: 46 + offset)]
+    }
+    
+    for octave in 0..<9
+    {
+      for i in 0..<temp_scale.count
+      {
+        var holder : Int = temp_scale[i].semitone
+        key_scale.append(Note(position: (i+1), semitone: holder))
+        temp_scale[i].semitone += (12)
+      }
+    }
+  }
+  
+  /*public oldinit(_ offset:Int)
   {
     
     self.offset = offset
@@ -137,7 +246,7 @@ class KeyScale
         temp_scale[i].semitone += (12)
       }
     }
-  }
+  }*/
   
   public func find(_ midi_number:Int, _ interval:Int) -> Note
   {
