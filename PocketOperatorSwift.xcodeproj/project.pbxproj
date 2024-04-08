@@ -19,6 +19,7 @@
 		67636CCA2BA8DC4400435C12 /* LFO3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67636CC92BA8DC4400435C12 /* LFO3.swift */; };
 		67636CCC2BA8F35C00435C12 /* DrumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67636CCB2BA8F35C00435C12 /* DrumManager.swift */; };
 		67636CCE2BA8F60000435C12 /* drumSamples in Resources */ = {isa = PBXBuildFile; fileRef = 67636CCD2BA8F60000435C12 /* drumSamples */; };
+		676C9B5C2BC4632400ECAC4C /* Swift.gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 676C9B5B2BC4632400ECAC4C /* Swift.gitignore */; };
 		67947CE02B8CFBC000D98ACE /* PocketOperatorSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67947CDF2B8CFBC000D98ACE /* PocketOperatorSwiftApp.swift */; };
 		67947CE22B8CFBC000D98ACE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67947CE12B8CFBC000D98ACE /* ContentView.swift */; };
 		67947CE42B8CFBC600D98ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67947CE32B8CFBC600D98ACE /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		67636CC92BA8DC4400435C12 /* LFO3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFO3.swift; sourceTree = "<group>"; };
 		67636CCB2BA8F35C00435C12 /* DrumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumManager.swift; sourceTree = "<group>"; };
 		67636CCD2BA8F60000435C12 /* drumSamples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = drumSamples; sourceTree = "<group>"; };
+		676C9B5B2BC4632400ECAC4C /* Swift.gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Swift.gitignore; sourceTree = "<group>"; };
 		67947CDC2B8CFBC000D98ACE /* PocketOperatorSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketOperatorSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67947CDF2B8CFBC000D98ACE /* PocketOperatorSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketOperatorSwiftApp.swift; sourceTree = "<group>"; };
 		67947CE12B8CFBC000D98ACE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = PocketOperatorSwift/ContentView.swift; sourceTree = SOURCE_ROOT; };
@@ -142,6 +144,7 @@
 		67947CDE2B8CFBC000D98ACE /* PocketOperatorSwift */ = {
 			isa = PBXGroup;
 			children = (
+				676C9B5B2BC4632400ECAC4C /* Swift.gitignore */,
 				67636CCD2BA8F60000435C12 /* drumSamples */,
 				67087EC72B909D3800FE5DAB /* basicSamples */,
 				67087EC92B909E5B00FE5DAB /* Sampler Instruments */,
@@ -307,6 +310,7 @@
 			files = (
 				67087EC82B909D3800FE5DAB /* basicSamples in Resources */,
 				67947CE72B8CFBC600D98ACE /* Preview Assets.xcassets in Resources */,
+				676C9B5C2BC4632400ECAC4C /* Swift.gitignore in Resources */,
 				67947CE42B8CFBC600D98ACE /* Assets.xcassets in Resources */,
 				67636CCE2BA8F60000435C12 /* drumSamples in Resources */,
 				67087ECA2B909E5C00FE5DAB /* Sampler Instruments in Resources */,
