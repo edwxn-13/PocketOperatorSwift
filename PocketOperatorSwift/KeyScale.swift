@@ -31,6 +31,12 @@ class KeyScale
   }
   
   
+  public static func get_mFifth(note: Note) -> Note
+  {
+    return Note(position: 1, semitone: note.semitone + 6)
+  }
+  
+  
   public static func get_third(note: Note) -> Note
   {
     return Note(position: 1, semitone: note.semitone + 4)
@@ -73,6 +79,21 @@ class KeyScale
     }
     
   }
+  
+  public static func get_ambiguous_fifth(targetNote: Note) -> Note
+  {
+    if(targetNote.position == 7)
+    {
+      return get_mFifth(note: targetNote)
+    }
+    
+    else
+    {
+      return get_fifth(note: targetNote)
+    }
+    
+  }
+  
   
   public var offset = 0
   

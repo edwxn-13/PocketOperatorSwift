@@ -14,8 +14,8 @@
             filePath = "PocketOperatorSwift/KeyScale.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "init(_:_:)"
             landmarkType = "7">
             <Locations>
@@ -62,8 +62,8 @@
             filePath = "PocketOperatorSwift/KeyScale.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "getNoteNumber(position:octave:)"
             landmarkType = "7">
             <Locations>
@@ -110,8 +110,8 @@
             filePath = "PocketOperatorSwift/KeyScale.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
+            startingLineNumber = "325"
+            endingLineNumber = "325"
             landmarkName = "binaryNoteSearch(_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "PocketOperatorSwift/KeyScale.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "320"
-            endingLineNumber = "320"
+            startingLineNumber = "341"
+            endingLineNumber = "341"
             landmarkName = "binaryNoteSearch(_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "PocketOperatorSwift/KeyScale.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
             landmarkName = "binaryNoteSearch(_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,10 +174,329 @@
             filePath = "PocketOperatorSwift/FractalMeldoy.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "mutate(index:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "242F303A-6D44-4550-A0E4-FE36B28D33A9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocketOperatorSwift/Sequencer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "get_bpm(current:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "242F303A-6D44-4550-A0E4-FE36B28D33A9 - c8d24dee103cce95"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PocketOperatorSwift.SpeedUtility.get_bpm(current: Swift.Float) -&gt; Swift.Float"
+                  moduleName = "PocketOperatorSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/edwxn/programming/graphics/testing/PocketOperatorSwift/PocketOperatorSwift/Sequencer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "242F303A-6D44-4550-A0E4-FE36B28D33A9 - c8d24dee103cce95"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PocketOperatorSwift.SpeedUtility.get_bpm(current: Swift.Float) -&gt; Swift.Float"
+                  moduleName = "PocketOperatorSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/edwxn/programming/graphics/testing/PocketOperatorSwift/PocketOperatorSwift/Sequencer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "242F303A-6D44-4550-A0E4-FE36B28D33A9 - c8d24dee103cced7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PocketOperatorSwift.SpeedUtility.get_bpm(current: Swift.Float) -&gt; Swift.Float"
+                  moduleName = "PocketOperatorSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/edwxn/programming/graphics/testing/PocketOperatorSwift/PocketOperatorSwift/Sequencer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A2CC184-9140-4517-9669-CE4C16D41E36"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocketOperatorSwift/Sequencer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "get_bpm(current:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8A2CC184-9140-4517-9669-CE4C16D41E36 - c8d24dee103ccfdf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PocketOperatorSwift.SpeedUtility.get_bpm(current: Swift.Float) -&gt; Swift.Float"
+                  moduleName = "PocketOperatorSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/edwxn/programming/graphics/testing/PocketOperatorSwift/PocketOperatorSwift/Sequencer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  uuid = "8A2CC184-9140-4517-9669-CE4C16D41E36 - c8d24dee103ccfdf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PocketOperatorSwift.SpeedUtility.get_bpm(current: Swift.Float) -&gt; Swift.Float"
+                  moduleName = "PocketOperatorSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/edwxn/programming/graphics/testing/PocketOperatorSwift/PocketOperatorSwift/Sequencer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "248">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "674D373A-ED64-47CC-9F3A-0C9F64A0F590"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocketOperatorSwift/Sequencer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "next_chord_markov(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9FAF697-9E8A-4D93-A503-D771A7F18BFE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocketOperatorSwift/Sequencer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "346"
+            endingLineNumber = "346"
+            landmarkName = "start_sequencer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5923363F-52D6-4BA6-AADA-0A6A27C9C60B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocketOperatorSwift/Sequencer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "345"
+            endingLineNumber = "345"
+            landmarkName = "start_sequencer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE6C7C15-9129-41E0-95CC-C32026856951"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocketOperatorSwift/Sequencer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "generate_transition_diagram(weight:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "554E9F3B-E7A2-48B1-BE0D-7386C70FA259"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocketOperatorSwift/FractalMeldoy.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "generate_stage_weight(selected:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "25CE7EF8-B8B8-4E5A-B4B8-EFE0DDD0ED91"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocketOperatorSwift/FractalMeldoy.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "generate_stage_weight(selected:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4EC41D86-1120-46E5-8ED8-FE049B4D2976"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocketOperatorSwift/Sequencer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "generate_transition_diagram(weight:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8499E58E-D6B3-4AC6-85EC-7A1AC2ECC37B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocketOperatorSwift/FractalMeldoy.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "generate_stage_weight(selected:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8499E58E-D6B3-4AC6-85EC-7A1AC2ECC37B - 52f5054fefa90df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static PocketOperatorSwift.MarkovManger.generate_stage_weight(selected: Swift.Array&lt;Swift.Float&gt;, _: Swift.Float) -&gt; Swift.Array&lt;Swift.Float&gt;"
+                  moduleName = "PocketOperatorSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/edwxn/programming/graphics/testing/PocketOperatorSwift/PocketOperatorSwift/FractalMeldoy.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "588">
+               </Location>
+               <Location
+                  uuid = "8499E58E-D6B3-4AC6-85EC-7A1AC2ECC37B - 52f5054fefa90df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static PocketOperatorSwift.MarkovManger.generate_stage_weight(selected: Swift.Array&lt;Swift.Float&gt;, _: Swift.Float) -&gt; Swift.Array&lt;Swift.Float&gt;"
+                  moduleName = "PocketOperatorSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/edwxn/programming/graphics/testing/PocketOperatorSwift/PocketOperatorSwift/FractalMeldoy.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "592">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "056E9F9B-DF9F-4BC5-8409-4F5FFCF3E192"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PocketOperatorSwift/FractalMeldoy.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "generate_stage_weight(selected:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "056E9F9B-DF9F-4BC5-8409-4F5FFCF3E192 - 52f5054fefa90b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static PocketOperatorSwift.MarkovManger.generate_stage_weight(selected: Swift.Array&lt;Swift.Float&gt;, _: Swift.Float) -&gt; Swift.Array&lt;Swift.Float&gt;"
+                  moduleName = "PocketOperatorSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/edwxn/programming/graphics/testing/PocketOperatorSwift/PocketOperatorSwift/FractalMeldoy.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "644">
+               </Location>
+               <Location
+                  uuid = "056E9F9B-DF9F-4BC5-8409-4F5FFCF3E192 - 52f5054fefa9053"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static PocketOperatorSwift.MarkovManger.generate_stage_weight(selected: Swift.Array&lt;Swift.Float&gt;, _: Swift.Float) -&gt; Swift.Array&lt;Swift.Float&gt;"
+                  moduleName = "PocketOperatorSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/edwxn/programming/graphics/testing/PocketOperatorSwift/PocketOperatorSwift/FractalMeldoy.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "668">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

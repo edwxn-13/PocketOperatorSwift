@@ -74,7 +74,7 @@ public class LFO3 : ObservableObject
     {
       angle = angle + (5.625/2);
     }
-    print(get_value() , "\n")
+    //print(get_value() , "\n")
   }
 }
 

@@ -32,6 +32,9 @@ struct PocketSequencerData
   public var fm3 : Float = 1;
   public var mode: Float = 1;
   public var drum_type : Int = 0;
+  public var generation_weight : Float = 0.5
+  
+  public var speed_track : Bool = true;
   
   public var chord_rhythm : division = division.Dotted
   public var arp_rhythm : division = division.Eighth
@@ -58,6 +61,11 @@ class SpeedUtility
   var frequency : Int = 0
   var last_recorded_speed : Float = 0
   var initial_bpm : Float = 0;
+  var top_speed : Float = 0
+  public var bpm_index : Float = 0;
+  public var isTracking : Bool = true;
+  
+  private var weight : Float = 0
   
   public func calculate_average(_ new_speed : Float)
   {
@@ -65,6 +73,26 @@ class SpeedUtility
     frequency += 1
     total_speed += new_speed
     average_speed = total_speed / Float(frequency)
+    
+    if(last_recorded_speed > top_speed){top_speed = last_recorded_speed}
+    if(top_speed != 0){weight = last_recorded_speed/top_speed}
+    if(average_speed < 0){average_speed = 0.01}
+    if(last_recorded_speed < 0){last_recorded_speed = 0.01}
+    if(total_speed < 0){total_speed = 0.01}
+  }
+  
+  public func get_weight() -> Float
+  {
+    if(weight < 0.2)
+    {
+      weight = 0.2
+    }
+    
+    if(weight > 0.9)
+    {
+      weight = 0.9
+    }
+    return weight
   }
   
   init(initial_bpm: Float)
@@ -77,18 +105,33 @@ class SpeedUtility
     return average_speed
   }
   
-  public func get_bpm() -> Float
+  public func get_bpm(current : Float) -> Float
   {
-    var bpm_index = ((average_speed/10.0)) * initial_bpm
-    var bpm = initial_bpm + (bpm_index)
-    
-    Log(bpm);
-    Log("\n");
-    
-    if bpm > 280
+    bpm_index = ((average_speed/10.0)) * initial_bpm
+    var bpm = current
+
+    if(last_recorded_speed > average_speed)
     {
-      return 280
+      bpm = current + bpm_index;
     }
+    
+    if(last_recorded_speed < average_speed)
+    {
+      bpm = current - bpm_index;
+    }
+    
+    
+    if(bpm < 0)
+    {
+      bpm = 20
+    }
+    
+    if(bpm > 280)
+    {
+      bpm = 280
+    }
+    
+    if(isTracking == false){  return current; }
     return bpm
   }
 }
@@ -108,6 +151,14 @@ class ChordController
   ]
   public var chord_progression : [Int] = [0 , 4 , 5, 2]
   
+  func generate_transition_diagram(weight : Float)
+  {
+    for i in 0..<transition_diagram.count
+    {
+      transition_diagram[i] = MarkovManger.generate_stage_weight(selected: transition_diagram[i], 1-weight)
+    }
+  }
+  
   func generate_progression()
   {
     chord_progression[0] = next_chord_markov(chord_progression[3])
@@ -116,6 +167,7 @@ class ChordController
     {
       chord_progression[i + 1] = next_chord_markov(chord_progression[i])
     }
+    print_progression()
   }
   
   func next_chord_markov(_ chord : Int) -> Int
@@ -136,6 +188,12 @@ class ChordController
     }
     
     return 0
+  }
+  
+  func print_progression()
+  {
+    print("chords: " , chord_progression, " - ")
+   
   }
 }
 
@@ -260,11 +318,6 @@ class PocketSequencer: ObservableObject, HasAudioEngine
       try engine.start()
     } catch let err {}
     
-    for i in 0..<1000
-    {
-      melodyManager.child_melody()
-    }
-    
     speedUtility = SpeedUtility(initial_bpm: Float(sequencer_data.bpm));
     
     while isPlaying
@@ -274,22 +327,33 @@ class PocketSequencer: ObservableObject, HasAudioEngine
       melodyManager.major_scale = major_scale
       
       drum_mangager.type = sequencer_data.drum_type
+      
+      melodyManager.gen_rhythm()
+      melodyManager.child_melody()
+
       for x in 0..<x_size
       {
         generate_next_step(note_step)
+        speedUtility.isTracking = sequencer_data.speed_track
         speedUtility.calculate_average(Float(locationManager.getSpeed()))
-        //sequencer_data.bpm = Double(speedUtility.get_bpm())
+        
+        if(sequencer_data.speed_track)
+        {
+          sequencer_data.generation_weight = speedUtility.get_weight()
+        }
+        
+        chordManager.generate_transition_diagram(weight: sequencer_data.generation_weight)
+        melodyManager.rhythm_manager.generate_transition_diagram(weight: sequencer_data.generation_weight)
+        
+        sequencer_data.bpm = Double(speedUtility.get_bpm(current: Float(sequencer_data.bpm)))
         for y in 0..<y_size
         {
-          
-          
           if (playing[note_step] == true)
           {
             let scale_note : Int = major_scale.getNoteNumber(position: (note_step/x_size), octave: 1)
             let temp_note : Note = major_scale.findIndividual(scale_note)
             lastPlayed = temp_note
           }
-          
           note_step += x_size
         }
         
@@ -440,7 +504,7 @@ class PocketSequencer: ObservableObject, HasAudioEngine
     {
       arp_synth.play(noteNumber: MIDINoteNumber(lastPlayed.semitone - 12),velocity: 127, channel: 0)
       arp_synth.play(noteNumber: MIDINoteNumber(KeyScale.get_ambiguous_third(targetNote: lastPlayed).semitone - 12),velocity: 127, channel: 0)
-      arp_synth.play(noteNumber: MIDINoteNumber(KeyScale.get_fifth(note: lastPlayed).semitone - 12),velocity: 127, channel: 0)
+      arp_synth.play(noteNumber: MIDINoteNumber(KeyScale.get_ambiguous_fifth(targetNote: lastPlayed).semitone - 12),velocity: 127, channel: 0)
     }
   }
   
@@ -448,10 +512,11 @@ class PocketSequencer: ObservableObject, HasAudioEngine
   {
     if(beat % melodyManager.rhythm.rawValue == 0)
     {
-      harmony_synth.noteOn(pitch: Pitch(intValue:melodyManager.get_rendered_note2(beat).semitone), point: CGPoint(x: 1, y: 1))
+      harmony_synth.noteOn(pitch: Pitch(intValue:melodyManager.get_note(beat).semitone), point: CGPoint(x: 1, y: 1))
       //harmony_synth.noteOn(pitch: Pitch(intValue:melodyManager.get_note(beat).semitone), point: CGPoint(x: 1, y: 1))
       //harmony_synth.noteOn(pitch: Pitch(intValue:melodyManager.get_note(beat).semitone), point: CGPoint(x: 1, y: 1))
       //melodyManager.switch_rhythm()
+      melodyManager.get_next_rhythm()
     }
   }
   
@@ -518,8 +583,8 @@ class PocketSequencer: ObservableObject, HasAudioEngine
       
       sequencer_data.fm1 = 7
       sequencer_data.fm2 = 3
-      sequencer_data.fm3 = 0
-      harmony_synth.cutoff = 20000
+      sequencer_data.fm3 = 1
+      harmony_synth.cutoff = 19000
     }
   }
   
@@ -701,7 +766,7 @@ struct PocketSequencerView : View {
             }
             HStack{
               Text("BPM")
-              Slider(value: $parent_class.sequencer_data.bpm, in: 120...280)
+              Slider(value: $parent_class.sequencer_data.bpm, in: 20...280)
             }
             HStack{
               Text("Drum Volume")
@@ -762,22 +827,34 @@ struct PocketSequencerView : View {
             
             HStack
             {
-              RoundedRectangle(cornerRadius: 0.5 ).fill(Color.red)
-                .onTapGesture(perform: {
-                  parent_class.bell_preset()
-                })
-              RoundedRectangle(cornerRadius: 0.5 ).fill(Color.red)
-                .onTapGesture(perform: {
-                  parent_class.guitar_preset()
-                })
-              RoundedRectangle(cornerRadius: 0.5 ).fill(Color.red)
-                .onTapGesture(perform: {
-                  parent_class.sine_pluck_preset()
-                })
-              RoundedRectangle(cornerRadius: 0.5).fill(Color.red)
-                .onTapGesture(perform: {
-                  parent_class.bright_lead_preset()
-                })
+              ZStack{
+                RoundedRectangle(cornerRadius: 0.5 ).fill(Color.red)
+                  .onTapGesture(perform: {
+                    parent_class.bell_preset()
+                  })
+                Text("FM Bell")
+              }
+              ZStack{
+                RoundedRectangle(cornerRadius: 0.5 ).fill(Color.red)
+                  .onTapGesture(perform: {
+                    parent_class.guitar_preset()
+                  })
+                Text("Guitar")
+              }
+              ZStack{
+                RoundedRectangle(cornerRadius: 0.5 ).fill(Color.red)
+                  .onTapGesture(perform: {
+                    parent_class.sine_pluck_preset()
+                  })
+                Text("Sine Pluck")
+              }
+              ZStack{
+                RoundedRectangle(cornerRadius: 0.5).fill(Color.red)
+                  .onTapGesture(perform: {
+                    parent_class.bright_lead_preset()
+                  })
+                Text("Bright Lead")
+              }
             }
 
           }.tabItem { Label("FM Settings", systemImage: "tray.and.arrow.up.fill") }
@@ -852,6 +929,19 @@ struct PocketSequencerView : View {
                 Text("Custom").tag(3)
                 Text("None").tag(4)
               }.pickerStyle(SegmentedPickerStyle())
+            }
+            
+            HStack {
+              Text("Speed Tracking")
+              Picker("Speed", selection: $parent_class.sequencer_data.speed_track) {
+                Text("On").tag(true)
+                Text("Off").tag(false)
+              }.pickerStyle(SegmentedPickerStyle())
+            }
+            
+            HStack{
+              Text("Generation Weight")
+              Slider(value: $parent_class.sequencer_data.generation_weight, in: 0.2...0.8, step: 0.01)
             }
           }.padding(10).onDisappear(){}.tabItem { Label("Adv", systemImage: "tray.and.arrow.down.fill") }
           
