@@ -56,7 +56,7 @@ struct PocketSequencerData
 
 class SpeedUtility
 {
-  var total_speed : Float = 0
+  var total_speed : Float = 0.01
   var average_speed : Float = 0
   var frequency : Int = 0
   var last_recorded_speed : Float = 0
@@ -107,28 +107,31 @@ class SpeedUtility
   
   public func get_bpm(current : Float) -> Float
   {
-    bpm_index = ((average_speed/10.0)) * initial_bpm
+    bpm_index = ((average_speed/top_speed))
     var bpm = current
+
+    if(bpm_index > 1){bpm_index = 1}
+    if(bpm_index < 0.1){bpm_index = 0.1}
+    
 
     if(last_recorded_speed > average_speed)
     {
-      bpm = current + bpm_index;
+      bpm = bpm + (0.05 * initial_bpm)
     }
     
     if(last_recorded_speed < average_speed)
     {
-      bpm = current - bpm_index;
+      bpm = bpm - (0.05 * initial_bpm)
     }
     
-    
-    if(bpm < 0)
+    if(bpm < initial_bpm * 0.1)
     {
-      bpm = 20
+      bpm = initial_bpm * 0.1
     }
     
-    if(bpm > 280)
+    if(bpm > initial_bpm * 1.1)
     {
-      bpm = 280
+      bpm = initial_bpm * 1.1
     }
     
     if(isTracking == false){  return current; }
@@ -334,9 +337,7 @@ class PocketSequencer: ObservableObject, HasAudioEngine
       for x in 0..<x_size
       {
         generate_next_step(note_step)
-        speedUtility.isTracking = sequencer_data.speed_track
-        speedUtility.calculate_average(Float(locationManager.getSpeed()))
-        
+
         if(sequencer_data.speed_track)
         {
           sequencer_data.generation_weight = speedUtility.get_weight()
@@ -345,7 +346,6 @@ class PocketSequencer: ObservableObject, HasAudioEngine
         chordManager.generate_transition_diagram(weight: sequencer_data.generation_weight)
         melodyManager.rhythm_manager.generate_transition_diagram(weight: sequencer_data.generation_weight)
         
-        sequencer_data.bpm = Double(speedUtility.get_bpm(current: Float(sequencer_data.bpm)))
         for y in 0..<y_size
         {
           if (playing[note_step] == true)
@@ -359,7 +359,8 @@ class PocketSequencer: ObservableObject, HasAudioEngine
         
         note_step += 1
         step_behaviour(note_step)
-        
+        sequencer_data.bpm = Double(speedUtility.get_bpm(current: Float(sequencer_data.bpm)))
+
         if note_step > (x_size * y_size)
         {
           note_step = x
@@ -390,6 +391,9 @@ class PocketSequencer: ObservableObject, HasAudioEngine
   {
     for i in 0 ..< 16
     {
+      speedUtility.isTracking = sequencer_data.speed_track
+      speedUtility.calculate_average(Float(locationManager.getSpeed()))
+
       play_harmony(i, step_number);
       play_bassline(i, step_number);
       play_chord(i, step_number)
@@ -398,6 +402,8 @@ class PocketSequencer: ObservableObject, HasAudioEngine
       lfo_array[0].update()
       lfo_array[1].update()
       
+      setLFO()
+
       drum_mangager.drum_pattern(step_number, i)
       filter?.cutoffFrequency = AUValue((calcFilterCutoff(cutoff: locationManager.getHeading())))
       
@@ -427,6 +433,14 @@ class PocketSequencer: ObservableObject, HasAudioEngine
       step += x_size
       if(step > x_size * y_size){step = step % x_size}
     }
+  }
+  
+  
+  public func setLFO()
+  {
+    //bass_synth.osc[0].$modulatingMultiplier.value = 0.001 + lfo_array[1].get_value() * 50;
+    bass_synth.osc[0].modulationIndex = 0.001 + lfo_array[1].get_value() * 50;
+    //bass_synth.osc[0].
   }
   
   private func get_interval(_ init_value : Int, _ interval : Int) -> Int
@@ -637,6 +651,11 @@ class PocketSequencer: ObservableObject, HasAudioEngine
     }
   }
   
+  public func onBPMChange()
+  {
+    speedUtility = SpeedUtility(initial_bpm: Float(sequencer_data.bpm))
+  }
+  
   
   class MyThread: Thread {
     
@@ -766,7 +785,9 @@ struct PocketSequencerView : View {
             }
             HStack{
               Text("BPM")
-              Slider(value: $parent_class.sequencer_data.bpm, in: 20...280)
+              Slider(value: $parent_class.sequencer_data.bpm, in: 20...280).onSubmit {
+                parent_class.onBPMChange()
+              }
             }
             HStack{
               Text("Drum Volume")

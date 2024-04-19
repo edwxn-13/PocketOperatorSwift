@@ -1,3 +1,11 @@
+//
+//  ExtSynth.swift
+//  PocketOperatorSwift
+//
+//  Created by Edwin Nwosu on 01/03/2024.
+//
+
+
 import SwiftUI
 import AudioKit
 import Tonic

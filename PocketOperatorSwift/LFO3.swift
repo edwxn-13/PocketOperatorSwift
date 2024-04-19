@@ -37,44 +37,49 @@ public class LFO3 : ObservableObject
   
   public func get_value() -> Float
   {
+    
+    var value : Float = 0;
     if(wave == Waveform2.Sine)
     {
-      return sin(deg2rads(angle))
+      value = sin(deg2rads(angle))
     }
     if(wave == Waveform2.Saw)
     {
-      return sin(angle)
+      value =  sin(angle)
     }
     if(wave == Waveform2.Square)
     {
-      return sin(deg2rads(angle)) + (0.33333 * sin (deg2rads(3 * angle))) + (0.2 * sin(deg2rads( 5 * angle))) + (0.124 * sin(deg2rads( 7 * angle)))
+      value = sin(deg2rads(angle)) + (0.33333 * sin (deg2rads(3 * angle))) + (0.2 * sin(deg2rads( 5 * angle))) + (0.124 * sin(deg2rads( 7 * angle)))
     }
     if(wave == Waveform2.Random)
     {
-      return sin(angle)
+      value =  sin(angle)
     }
-    return sin(angle) * intensity
+    
+    value = (value + 1)/2
+    
+    return value * intensity
   }
   
   public func update()
   {
     if(rate == division.Sixteenth)
     {
-      angle = angle + (45/2);
+      angle = angle + (45/8);
     }
     if(rate == division.Eighth)
     {
-      angle = angle + (22.5/2);
+      angle = angle + (22.5/8);
     }
     if(rate == division.Quarter)
     {
-      angle = angle + (11.25/2);
+      angle = angle + (11.25/8);
     }
     if(rate == division.Half)
     {
-      angle = angle + (5.625/2);
+      angle = angle + (5.625/8);
     }
-    //print(get_value() , "\n")
+    print(get_value() , "\n")
   }
 }
 
